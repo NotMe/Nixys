@@ -1,0 +1,21 @@
+---
+# tasks file for apache_config
+
+- name: Install additional packages
+  apt: name={{ item }} update_cache=yes state=latest
+  loop: [ 'apache2' ]
+
+- name: Copy apache configuration in place.
+  template:
+    src: "templates/apache2.conf.j2"
+    dest: "/etc/apache2/apache2.conf"
+
+- name: Copy apache port configuration in place.
+  template:
+    src: "templates/ports.conf.j2"
+    dest: "/etc/apache2/ports.conf"
+
+- name: Copy apache security configuration in place.
+  template:
+    src: "templates/security.conf.j2"
+    dest: "/etc/apache2/conf-enabled/security.conf"

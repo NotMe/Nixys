@@ -1,0 +1,8 @@
+---
+# defaults file for php_config
+
+php_session_gc_maxlifetime: "86400"
+
+php_session_gc_probability: "10"
+
+php_upload_max_filesize: "64M"

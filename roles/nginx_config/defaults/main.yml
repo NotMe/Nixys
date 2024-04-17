@@ -1,0 +1,10 @@
+---
+# defaults file for nginx_config
+
+nginx_server_gzip: "on"
+
+nginx_server_gzip_types: "text/plain text/css application/json application/xml application/javascript"
+
+nginx_client_max_body_size: "10M"
+
+nginx_server_tokens: "off"

@@ -1,0 +1,7 @@
+---
+# defaults file for mysql_config
+
+mysql_query_cache_size: "32M"
+mysql_tmp_table_size: "50M"
+mysql_thread_cache_size: 20
+mysql_innodb_file_per_table: 1

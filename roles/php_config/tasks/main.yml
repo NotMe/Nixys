@@ -1,0 +1,11 @@
+---
+# tasks file for php_config
+
+- name: Install additional packages
+  apt: name={{ item }} update_cache=yes state=latest
+  loop: [ 'php8.1', 'libapache2-mod-php' ]
+
+- name: Copy php configuration in place.
+  template:
+    src: "templates/php.ini.j2"
+    dest: "/etc/php/8.1/apache2/php.ini"

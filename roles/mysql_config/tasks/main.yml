@@ -1,0 +1,11 @@
+---
+# tasks file for mysql_config
+
+- name: Install additional packages
+  apt: name={{ item }} update_cache=yes state=latest
+  loop: [ 'mysql-client=5.7*', 'mysql-community-server=5.7*', 'mysql-server=5.7*' ]
+
+- name: Copy mysql configuration in place.
+  template:
+    src: "templates/mysqld.cnf.j2"
+    dest: "/etc/mysql/mysql.conf.d/mysqld.cnf"

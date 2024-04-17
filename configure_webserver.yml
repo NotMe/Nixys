@@ -1,0 +1,10 @@
+---
+- name: Webserver Configuration
+  hosts: webservers_ip_addresses
+  become: yes
+
+  roles:
+    - nginx_config
+    - apache_config
+    - php_config
+    - mysql_config

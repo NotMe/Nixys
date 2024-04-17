@@ -1,0 +1,10 @@
+---
+# defaults file for apache_config
+
+apache_http_port: "81"
+
+apache_max_clients: "25"
+
+apache_prohibition_svn: "denied"
+
+apache_prohibition_git: "denied"
